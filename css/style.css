@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap&subset=cyrillic');
+
+:root {
+  --dark: #1f1f1f;
+  --gray: #666;
+  --light: #fff;
+  --red: #dc3545;
+}
+
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", "Helvetica", "Arial", sans-serif;
+}
+
+#top {
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  height: 80px;
+  
+  position: relative;
+  top: -1px;
+  /* z-index: 2; */
+}
+
+#levus-menu {
+  width: 1200px;
+  margin: auto;
+}
+
+#levus-menu ul {
+  display: flex;
+  position: relative;
+}
+
+#levus-menu li {
+  display: block;
+  position: relative;
+  background: var(--dark);
+}
+
+#levus-menu a {
+  display: block;
+  color: var(--light);
+  background: var(--dark);
+  font-size: 14px;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: background .5s;
+}
+
+#levus-menu a:hover {
+  background: var(--dark);
+}
+
+/* first line */
+#levus-menu ul a{
+  position: relative;
+  z-index: 2;
+  padding: 30px 20px;
+}
+
+#levus-menu ul a:hover::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--red);
+}
+
+/* submenu */
+#levus-menu li ul {
+  display: block;
+  width: 230px;
+  position: absolute;
+  left: 0;
+  top: -999px;
+  transition: top .5s;
+
+  z-index: 1;
+  border: 1px solid #292929;
+  border-radius: 3px;
+}
+
+#levus-menu li:hover ul {
+  top: 100%;
+}
+
+/*second line */
+#levus-menu li ul a{
+  z-index: 1;
+  padding: 10px 20px;
+  color: #bbb;
+  transition: color .5s;
+}
+
+#levus-menu li ul a:hover::after{
+  content: '';
+  display: none;
+}
+
+#levus-menu li ul a:hover{
+  color: var(--red);
+}
+
+/* subsubmenu */
+#levus-menu li:hover li ul {
+  position: absolute;
+  top: -999px;
+  right: -100%;
+  left: auto;
+  transition: top .5s;
+
+  border: 1px solid #292929;
+  border-radius: 3px;
+}
+
+#levus-menu li li:hover ul {
+  top: 10px;
+}
