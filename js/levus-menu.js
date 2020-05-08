@@ -1,9 +1,6 @@
 // обгортка меню
 const menu = document.querySelector('#levus-menu');
 
-/* // list items
-const lis = menu.querySelectorAll('li'); */
-
 // міняємо тип меню при зміні розміру вікна
 window.addEventListener('resize', changeMenu);
 
@@ -11,10 +8,6 @@ window.addEventListener('resize', changeMenu);
 document.addEventListener('DOMContentLoaded', changeMenu);
 
 menu.addEventListener('click', showMenu);
-
-/* lis.forEach(li => {
-  li.addEventListener('click', showUl);
-}); */
 
 // перемикаємо меню
 function changeMenu(){
@@ -35,8 +28,3 @@ function showMenu(){
     menu.classList.add('show');
   }
 }
-
-/* // розгорнути вкладене меню
-function showUl(e){
-  e.preventDefault();
-} */

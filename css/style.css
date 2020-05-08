@@ -208,6 +208,7 @@ mobile menu
   padding: 5px;
   display: inline-block;
   color: var(--light);
+  text-decoration: none;
 }
 
 #levus-menu.mobile.show li ul {
