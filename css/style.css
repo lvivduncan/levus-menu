@@ -165,7 +165,7 @@ mobile menu
   transition: background .5s;
 }
 
-#levus-menu.mobile::before {
+.levus-wrapper {
   content: '';
   display: block;
   position: absolute;
