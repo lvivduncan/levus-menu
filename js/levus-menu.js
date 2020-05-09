@@ -1,6 +1,6 @@
 {
   'use strict';
-  
+
   // обгортка меню
   const menu = document.querySelector('#levus-menu');
 
@@ -20,6 +20,9 @@
   // визначаємо при завантаженні сторінки
   document.addEventListener('DOMContentLoaded', changeMenu);
 
+  // додаємо елемент на сторінку
+  document.addEventListener('DOMContentLoaded', _ => menu.append(wrapper));
+
   // розкрити меню на мобільному
   wrapper.addEventListener('click', showMenu);
 
@@ -33,9 +36,6 @@
     if (window.innerWidth < 1200) {
       menu.classList.remove('desktop');
       menu.classList.add('mobile');
-
-      // додаємо елемент на сторінку
-      menu.append(wrapper);
     } else {
       menu.classList.remove('mobile');
       menu.classList.add('desktop');
@@ -51,11 +51,9 @@
     }
   }
 
-  // показвти вкладені списки 
+  // показати вкладені списки 
   function showUl(e) {
     e.stopPropagation();
-    if (e.target.classList.contains('parent')) {
-      this.classList.toggle('show');
-    }
+    e.target.classList.contains('parent') ? this.classList.toggle('show') : '';
   }
 }
