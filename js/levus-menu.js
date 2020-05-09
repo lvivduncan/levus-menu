@@ -17,7 +17,13 @@ window.addEventListener('resize', changeMenu);
 // визначаємо при завантаженні сторінки
 document.addEventListener('DOMContentLoaded', changeMenu);
 
+// розкрити меню на мобільному
 wrapper.addEventListener('click', showMenu);
+
+// розкриваємо/ховаємо вкладені списки
+lis.forEach(li => {
+  li.addEventListener('click', showUl);
+});
 
 // перемикаємо меню
 function changeMenu(){
@@ -39,5 +45,13 @@ function showMenu(){
     menu.classList.remove('show');
   } else {
     menu.classList.add('show');
+  }
+}
+
+// показвти вкладені списки 
+function showUl(e){
+  e.stopPropagation();
+  if(e.target.classList.contains('parent')){
+    this.classList.toggle('show');
   }
 }
