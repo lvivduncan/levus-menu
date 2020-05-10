@@ -69,7 +69,7 @@
 /* first line */
 #levus-menu.desktop ul a {
   position: relative;
-  z-index: 2;
+  z-index: 8;
   padding: 30px 20px;
 }
 
@@ -94,7 +94,7 @@
   -webkit-transition: top .5s;
   transition: top .5s;
 
-  z-index: 1;
+  z-index: 7;
   border: 1px solid #292929;
   border-radius: 3px;
 }
@@ -105,7 +105,7 @@
 
 /*second line */
 #levus-menu.desktop li ul a {
-  z-index: 1;
+  z-index: 7;
   padding: 10px 20px;
   color: #bbb;
   -webkit-transition: color .5s;
@@ -144,7 +144,7 @@ mobile menu
 
 #levus-menu.mobile {
   position: relative;
-  z-index: 2;
+  z-index: 8;
 }
 
 /* wrapper mobile menu */
@@ -161,7 +161,7 @@ mobile menu
   bottom: 0;
   right: 0;
   background: var(--dark);
-  z-index: 2;
+  z-index: 8;
 }
 
 /* pseudo-button*/
@@ -175,7 +175,7 @@ mobile menu
   position: absolute;
   top: 32px;
   right: 40px;
-  z-index: 3;
+  z-index: 9;
 
   -webkit-transition: background .5s;
   transition: background .5s;
@@ -185,7 +185,7 @@ mobile menu
 #levus-menu.mobile>ul {
   position: absolute;
   top: -999px;
-  z-index: 1;
+  z-index: 7;
   padding: 10px;
 
   -webkit-transition: top .5s;
@@ -207,7 +207,7 @@ mobile menu
 #levus-menu.mobile.show li {
   display: block;
   position: relative;
-  z-index: 4;
+  z-index: 10;
 }
 
 #levus-menu.mobile.show li a {
