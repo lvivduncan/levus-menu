@@ -16,7 +16,7 @@
   font-family: "Nunito", "Helvetica", "Arial", sans-serif;
 }
 
-#top {
+#header {
   background: var(--dark);
   display: flex;
   align-items: center;
