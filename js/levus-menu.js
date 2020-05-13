@@ -5,7 +5,7 @@
   const menu = document.querySelector('#levus-menu');
 
   // перевіряємо, чи таке меню існує
-  if (menu !== undefined || menu !== null) {
+  if (menu != null) {
 
     // обгортка для мобільного меню
     const wrapper = document.createElement('div');
