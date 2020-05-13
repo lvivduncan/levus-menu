@@ -4,56 +4,61 @@
   // обгортка меню
   const menu = document.querySelector('#levus-menu');
 
-  // обгортка для мобільного меню
-  const wrapper = document.createElement('div');
-  wrapper.className = 'levus-wrapper';
+  // перевіряємо, чи таке меню існує
+  if (menu !== undefined || menu !== null) {
 
-  // усі li в меню
-  const lis = menu.querySelectorAll('li');
+    // обгортка для мобільного меню
+    const wrapper = document.createElement('div');
+    wrapper.className = 'levus-wrapper';
 
-  // додаємо клас для батьківського елемента
-  lis.forEach(li => li.childNodes.length > 1 ? li.className = 'parent' : '');
+    // усі li в меню
+    const lis = menu.querySelectorAll('li');
 
-  // міняємо тип меню при зміні розміру вікна
-  window.addEventListener('resize', changeMenu);
+    // додаємо клас для батьківського елемента
+    lis.forEach(li => li.childNodes.length > 1 ? li.className = 'parent' : '');
 
-  // визначаємо при завантаженні сторінки
-  document.addEventListener('DOMContentLoaded', changeMenu);
+    // міняємо тип меню при зміні розміру вікна
+    window.addEventListener('resize', changeMenu);
 
-  // додаємо елемент на сторінку
-  document.addEventListener('DOMContentLoaded', _ => menu.append(wrapper));
+    // визначаємо при завантаженні сторінки
+    document.addEventListener('DOMContentLoaded', changeMenu);
 
-  // розкрити меню на мобільному
-  wrapper.addEventListener('click', showMenu);
+    // додаємо елемент на сторінку
+    document.addEventListener('DOMContentLoaded', _ => menu.append(wrapper));
 
-  // розкриваємо/ховаємо вкладені списки
-  lis.forEach(li => {
-    li.addEventListener('click', showUl);
-  });
+    // розкрити меню на мобільному
+    wrapper.addEventListener('click', showMenu);
 
-  // перемикаємо меню
-  function changeMenu() {
-    if (window.innerWidth < 1200) {
-      menu.classList.remove('desktop');
-      menu.classList.add('mobile');
-    } else {
-      menu.classList.remove('mobile');
-      menu.classList.add('desktop');
+    // розкриваємо/ховаємо вкладені списки
+    lis.forEach(li => {
+      li.addEventListener('click', showUl);
+    });
+
+    // перемикаємо меню
+    function changeMenu() {
+      if (window.innerWidth < 1200) {
+        menu.classList.remove('desktop');
+        menu.classList.add('mobile');
+      } else {
+        menu.classList.remove('mobile');
+        menu.classList.add('desktop');
+      }
+    }
+
+    // показуємо/ховаємо мобільне меню
+    function showMenu() {
+      if (menu.classList.contains('show')) {
+        menu.classList.remove('show');
+      } else {
+        menu.classList.add('show');
+      }
+    }
+
+    // показати вкладені списки 
+    function showUl(e) {
+      e.stopPropagation();
+      e.target.classList.contains('parent') ? this.classList.toggle('show') : '';
     }
   }
 
-  // показуємо/ховаємо мобільне меню
-  function showMenu() {
-    if (menu.classList.contains('show')) {
-      menu.classList.remove('show');
-    } else {
-      menu.classList.add('show');
-    }
-  }
-
-  // показати вкладені списки 
-  function showUl(e) {
-    e.stopPropagation();
-    e.target.classList.contains('parent') ? this.classList.toggle('show') : '';
-  }
 }
