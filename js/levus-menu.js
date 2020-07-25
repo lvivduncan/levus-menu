@@ -21,10 +21,10 @@
         window.addEventListener('resize', changeMenu);
 
         // визначаємо при завантаженні сторінки
-        document.addEventListener('DOMContentLoaded', changeMenu);
+        changeMenu();
 
         // додаємо елемент на сторінку
-        document.addEventListener('DOMContentLoaded', _ => menu.append(wrapper));
+        menu.append(wrapper);
 
         // розкрити меню на мобільному
         wrapper.addEventListener('click', showMenu);
